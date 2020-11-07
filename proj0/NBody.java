@@ -32,7 +32,7 @@ public class NBody {
 
         StdDraw.setScale(-Radius, Radius);
         StdDraw.clear();
-        String background = "image/starfield.jpg";
+        String background = "images/starfield.jpg";
         StdDraw.picture(0,0,background);
 
         for (Planet a : Planets) {
