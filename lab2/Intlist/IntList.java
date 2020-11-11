@@ -81,13 +81,13 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        if (A.rest == null) {
+        if (A == null) {
             return B;
         } else {
             A.rest = dcatenate(A.rest, B);
             return A;
         }
-    }
+
 
     /**
      * Returns a list consisting of the elements of A followed by the
@@ -96,7 +96,7 @@ public class IntList {
     public static IntList catenate(IntList A, IntList B) {
         IntList res = new IntList(A.first, null);
         IntList ptr = res;
-        while (A.rest != null) {
+        while (A != null) {
             A = A.rest;
             ptr.rest = new IntList(A.first, null);
         }
