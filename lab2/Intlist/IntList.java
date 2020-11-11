@@ -87,6 +87,7 @@ public class IntList {
             A.rest = dcatenate(A.rest, B);
             return A;
         }
+    }
 
 
     /**
@@ -241,5 +242,5 @@ public class IntList {
         out.format(")");
         return out.toString();
     }
-}
+    }
 
