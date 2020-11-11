@@ -99,12 +99,11 @@ public class IntList {
         while (A.rest != null) {
             A = A.rest;
             ptr.rest = new IntList(A.first, null);
-
         }
         ptr.rest = B;
         return res;
     }
-}
+
 
 
 
