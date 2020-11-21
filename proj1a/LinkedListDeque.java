@@ -96,20 +96,21 @@ public class LinkedListDeque<T> {
 
     /**the recursion get method (not finished yet it's wrong)*/
     public T getRecursion(int index) {
-        if (size== 0 || index >= size-1) {
+        if (size == 0 || index > size-1) {
             return null;
-        } else if ((size == 1) && (index == size-1)) {
-            return sentinel.after.item;
         }
-        sentinel = sentinel.after;
-        size -= 1;
-        return getRecursion(index-1);
+        Deque P = sentinel.after;
+        P = helper(index, P);
+        return P.item;
     }
 
-    public static void main(String[] args) {
-        LinkedListDeque P = new LinkedListDeque();
-        P.addFirst(1);
-        P.addLast(2);
-        System.out.println(P.get(1));
+    /**to make the P be in the wanted position*/
+    private Deque helper(int index, Deque P) {
+        if (index == 0) {
+            return P;
+        }
+        P = P.after;
+        return helper(index-1, P);
     }
+
 }
