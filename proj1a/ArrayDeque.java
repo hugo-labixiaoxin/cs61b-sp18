@@ -40,7 +40,7 @@ public class ArrayDeque<T> {
         size += 1;
     }
 
-    public void resize(int capacity) {
+    private void resize(int capacity) {
         T[] a = (T[]) new Object[capacity];
         int oldIndex = (nextFirst+1) % items.length;
         for (int newIndex = 0; newIndex <= size; newIndex++) {
@@ -83,7 +83,7 @@ public class ArrayDeque<T> {
             return null;
         }
         int currIndex = (nextFirst+1) % items.length;
-        return items[(index+currIndex)];
+        return items[(index+currIndex) % items.length];
    }
    /**
     public static void main(String[] args) {
